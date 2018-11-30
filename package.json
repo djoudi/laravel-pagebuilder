@@ -21,10 +21,12 @@
     },
     "dependencies": {
         "@types/lodash": "^4.14.116",
+        "chart.js": "^2.7.3",
         "raphael": "^2.2.7",
         "ts-loader": "^3.2.0",
         "typescript": "^2.9.2",
         "vue-bootstrap-datetimepicker": "^4.1.4",
+        "vue-chartjs": "^3.4.0",
         "vue-class-component": "^6.2.0",
         "vue-property-decorator": "^7.1.1",
         "vue-quill-editor": "^3.0.6",

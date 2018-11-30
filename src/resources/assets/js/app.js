@@ -17,11 +17,12 @@ import store from "./pagebuilder/store/index.ts"
 
 
 import Simplert from 'vue2-simplert';
+
 window.app = new Vue({
     el: '#app',
     store,
 
-    components:{
+    components: {
         Simplert
     },
 

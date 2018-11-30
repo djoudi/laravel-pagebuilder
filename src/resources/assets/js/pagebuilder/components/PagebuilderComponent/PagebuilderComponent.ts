@@ -65,7 +65,7 @@ export default class PagebuilderComponent extends Vue {
     currentView: string = 'Content';
     theme: string = this.defaultTheme;
 
-    elements: HtmlElement = {
+    elements: any = {
         body: document.querySelector('body'),
         contentWrapper: document.querySelector('.content-view'),
         columns: document.getElementsByClassName('pagebuilder-column')

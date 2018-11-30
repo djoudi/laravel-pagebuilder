@@ -17,19 +17,15 @@ import HeadlineTextElementIcon from '../../svgs/ElementIcons/HeadlineTextElement
 
 //@ts-ignore
 import pbConfig from '../../config/config.json';
-import {ArticleService} from "../../services/ArticleService";
-/*//@ts-ignore
-require( "raphael" );
-//@ts-ignore
-require('wheelnav/js/dist/wheelnav.min.js');*/
-
+import ChooseElementComponent from "../ChooseElementComponent/ChooseElementComponent";
 
 @Component({
     components: {
         Plus,
         ImageElementIcon,
         TextElementIcon,
-        HeadlineTextElementIcon
+        HeadlineTextElementIcon,
+        ChooseElementComponent
     }
 })
 export default class ColumnComponent extends Vue {
@@ -53,18 +49,7 @@ export default class ColumnComponent extends Vue {
         this.addElement();
         this.createColumnLayout();
 
-       /* //@ts-ignore
-        let wheel: any = new wheelnav('myWheelnav');
-        wheel.spreaderInTitle = 'menu';
-        wheel.spreaderOutTitle = 'close';
-        wheel.spreaderTitleFont = '100 24px Helvetica';
-        wheel.colors = ['#EDC951'];
-        wheel.spreaderEnable = true;
-        wheel.spreaderRadius = 85;
-        //@ts-ignore
-        wheel.slicePathFunction = slicePath().DonutSlice;
-        wheel.clickModeRotate = false;
-        wheel.createWheel(['text', 'icon', 'percent', 'angle']);*/
+
     }
 
     addElement(id: number = this.column.element_type_id) {
