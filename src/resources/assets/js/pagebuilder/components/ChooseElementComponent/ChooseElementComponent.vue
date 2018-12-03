@@ -1,6 +1,6 @@
 <template>
     <div class="choose-element-component">
-        <canvas ref="canvas"/>
+        <canvas @click="selectElement" width="350" height="350" :id="id"></canvas>
     </div>
 </template>
 

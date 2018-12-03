@@ -1,32 +1,70 @@
 import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
-
-
-
-import VueCharts from 'vue-chartjs'
+import {Component, Prop} from 'vue-property-decorator';
 //@ts-ignore
-import Chart, { ChartData, ChartOptions } from "chart.js";
+import Plus from '../../svgs/PlusIcon.vue'
+//@ts-ignore
+import Chart, {ChartData, ChartOptions} from "chart.js";
 
 
 @Component
 export default class ChooseElementComponent extends Vue {
+    @Prop()
+    elements: Array<any>;
+    @Prop()
+    id: string;
 
-    _chart: Chart | null = null;
+    chart: any = {};
 
+    mounted() {
+        let data: any = {
+            datasets: [{
+                data: [],
+                labels: [],
+                backgroundColor: [],
+                backgroundImage: [],
+                borderColor: '#f8f9fa',
+                title: '',
+                borderWidth: 4,
+                elements: []
+            }]
+        };
 
-    mounted(){
-        this.renderChart([40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11], [])
+        let labels: Array<string> = [];
+        this.elements.forEach((e: any) => {
+            data.datasets[0].data.push(1);
+            data.datasets[0].backgroundColor.push('rgba(255, 65, 108, 0.8)');
+            data.datasets[0].elements.push(e);
+            data.datasets[0].elements.push(e);
+            labels.push(e.name);
+        });
+            this.renderChart(data, labels);
     }
 
-    renderChart(data: any, options: any) {
-        let canvas: any = this.$refs.canvas;
-        this._chart = new Chart(
-            canvas.getContext("2d"), {
-                type: 'Doughnut',
-                data: data,
-                options: options,
+    renderChart(data: any, labels:Array<string>) {
+
+        var ctx = document.getElementById(this.id);
+
+        let chartOptions: object = {
+            type: 'doughnut',
+            labels: labels,
+            data: data,
+            options: {
             }
-        );
+        };
+
+        this.chart = new Chart(ctx, chartOptions);
+    }
+
+    selectElement(evt:any){
+        let activePoints = this.chart.getElementsAtEvent(evt);
+        if (activePoints[0]) {
+            let chartData = activePoints[0]['_chart'].config.data;
+            let index = activePoints[0]['_index'];
+
+            let elementName = chartData.datasets[0].elements[index].name;
+
+            alert(elementName)
+        }
     }
 
 }
