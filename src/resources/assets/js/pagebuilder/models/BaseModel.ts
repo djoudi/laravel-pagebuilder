@@ -6,9 +6,7 @@ export abstract class BaseModel{
 
     createUUID():string{
         function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
+            return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
         }
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     }

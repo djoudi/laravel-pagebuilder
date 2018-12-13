@@ -3168,6 +3168,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
+konva@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/konva/-/konva-2.5.1.tgz#cca611a9522e831e54cf57c508a1aed3f0ceac25"
+  integrity sha512-YdHEWqmbWPieqIZuLx7JFGm9Ui08hSUaSJ2k2Ml8o5giFgJ0WmxAS0DPXIM+Ty2ADRagOHZfXSJ/skwYqqlwgQ==
+
 laravel-mix@^2.0:
   version "2.1.14"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-2.1.14.tgz#5c3c778b888e21120aa9d8900c318411da2ec911"
@@ -5767,6 +5772,11 @@ vue-class-component@^6.2.0:
 vue-hot-reload-api@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
+
+vue-konva@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-konva/-/vue-konva-2.0.0.tgz#1fe0d68d26986f0249a93c755f54259cbff67d8d"
+  integrity sha512-aNyF7crkJBw+espNrxk/cDs5HFNNMldPreT8k8EG3JW71B4ocD5NtJu/sPJWogUGDkdS34lZowW73Bo4ujGoKA==
 
 vue-loader@^13.7.1:
   version "13.7.3"
